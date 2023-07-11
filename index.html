@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>User Manual VCSP</title>
+  <style>
+    code {
+      --tw-bg-opacity: 1;
+      background-color: rgb(30 41 59/var(--tw-bg-opacity));
+      display: block;
+      overflow-x: auto;
+      padding: 1em;
+      padding: 5px 5px;
+      background: #011627;
+      color: #d6deeb;
+      font-family: Consolas, "courier new";
+      color: white;
+      background-color: black;
+      padding: 10px;
+      font-size: 105%;
+      border-radius: 5px;
+    }
+
+
+    * {
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 1.5;
+      font-size: medium;
+    }
+
+    li {
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    /* Styling for the container */
+    .container {
+      display: flex;
+
+    }
+
+    /* Styling for the side bar */
+    .sidebar {
+      width: 50%;
+      background-color: #4c598b;
+      padding: 10px;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 20%;
+    }
+
+    /* Styling for the logo */
+    .logo {
+      display: block;
+      margin-bottom: 10px;
+      width: 100px;
+      /* Set the desired width */
+      margin-left: auto;
+      /* Center the logo horizontally */
+      margin-right: auto;
+    }
+
+    /* Styling for the main content */
+    .content {
+      flex-grow: 1;
+      padding: 10px;
+      margin-left: 30%;
+      margin-right: 20%;
+
+    }
+
+    /* Styling for the links in the sidebar */
+    .sidebar a {
+      display: block;
+      color: white;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="sidebar"
+      style="position: fixed; top: 0; left: 0; flex-direction: column; justify-content: space-evenly;">
+      <h2 style="text-align: center;">Version Control Stellantis Projects</h2>
+      <img src="/VCSP.png" alt="App Logo" class="logo">
+      <br>
+      <br>
+      <a href="#section1">Section 1: Getting Started</a>
+      <br>
+      <a href="#section2">Section 2: Installation Guide</a>
+      <br>
+      <a href="#section2">Section 3: Features and option - User Guide</a>
+      <br>
+      <a href="#section3">Section 4: Troubleshooting</a>
+      <br>
+      <a href="#section4">Section 5: Report Issues & Enhancements</a>
+      <br>
+      <a href="#section5">Section 6: Contribution</a>
+    </div>
+    <div class="content">
+      <div class="content"></div>
+      <h1>User Manual</h1>
+
+      <h2>Table of Contents</h2>
+      <ul>
+
+        <li>
+          <a href="#section1">Section 1: Getting Started</a>
+          <ul>
+            <li><a href="#section1">What is VCSP?</a></li>
+            <li><a href="#section3">Version control</a></li>
+            <li><a href="#section2">Git and GitHub</a></li>
+            <li><a href="#section4">Git Essentials</a></li>
+            <li><a href="#section5">GitHub Essentials</a></li>
+            <li><a href="#info">Aditional informations </a></li>
+          </ul>
+
+        <li><a href="#section2">Section 2: Installation Guide</a></li>
+
+        <li><a href="#section3">Section 3: Features and option - User Guide</a>
+          <ul>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Clone">Clone Project</a></li>
+            <li><a href="#Build">Build a Project</a></li>
+            <li><a href="#Commit">Commit Graph</a></li>
+            <li><a href="#Compare">Compare</a></li>
+            <li><a href="#Find">Find Use</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#section4">Section 4: Troubleshooting</a></li>
+        <li><a href="#section5">Section 5: Report Issues & Enhancements</a></li>
+        <li><a href="#section6">Section 6: Contribution</a></li>
+
+      </ul>
+
+      <div>
+        <h2 id="section1">Section 1: Getting Started</h2>
+        <hr>
+        <p>
+          Welcome to the user manual! In this section, we will cover the basic steps to get started
+          with the application, along with an introduction to version control. We will also explore
+          the key services of Git and GitHub, which form the core of the application.
+          Finally, we will provide an overview of the application VCSP on a global scale.
+        </p>
+        <div>
+          <h3>What is Version Control Stellantis Projects ?</h3>
+          <div style="text-align: center;">
+            <img style="margin: auto; width: 100px;" src="/VCSP.png" alt="VCSP Logo">
+          </div>
+          <p>
+            To improve the performance and reliability of STELLANTIS group vehicles, as well as for better integration
+            of embedded software in these vehicles, it is imperative to control software versions to ensure their proper
+            functioning and for better traceability. The company currently uses Synergy, a proprietary IBM software
+            for version control. It is commercially licensed and very expensive. Furthermore, it is no longer updated.
+            <br><br>Therefore, it is necessary to migrate to Git, a free and open-source service widely used by all
+            industries
+            that interact with software. This migration presents a problem for the integration team as they are not
+            accustomed to the workflow of the new solution and its basic principles. This requires training for the
+            entire team to transition to the new solution (Git). Additionally, some actions that could be performed with
+            Synergy-IBM in a single click now require several steps on Git and require interaction with the command
+            prompt (the terminal). <br><br>
+
+            The VCSP (Version Control Stellantis Projects) - the ultimate version control app
+            designed specifically for Stellantis N.V. With VCSP, managing the version control process
+            for software projects within Stellantis becomes more efficient and streamlined than ever before.
+            <br><br> VCSP offers a wide range of powerful functionalities tailored to enhance the version control
+            workflow.
+            Here's what VCSP brings to the table:
+          <ul>
+            <li>Seamless Project Cloning</li>
+            <li>Accessible Repository Search</li>
+            <li>Branch Comparison</li>
+            <li>Graphical Representation of Repository History</li>
+            <li>Extensive Information Repositor</li>
+            <li>Build new Software Evolutions </li>
+            <li> ... </li>
+          </ul>
+
+          VCSP is the go-to solution for Stellantis N.V. when it comes to efficient and effective version control.
+          Experience enhanced collaboration, simplified workflows, and improved project management with VCSP, the
+          ultimate
+          version control app tailored specifically for Stellantis projects.
+          </p>
+        </div>
+        <h3>Version Control</h3>
+
+        <p>
+          Version control is a system or method used to track and manage changes to files, documents, or source code
+          over time. It allows multiple people to collaborate on a project by providing a systematic way to track
+          modifications, revert to previous versions, and merge changes made by different contributors.
+
+          In the context of software development, version control systems (VCS) are commonly used to manage source code
+          files. These systems enable developers to keep track of changes made to code files, maintain a complete
+          history of revisions, and work on different branches of the codebase simultaneously.
+
+          Version control provides several key benefits, including:
+        <ol>
+          <li>
+            History and Audit Trail:
+            <p>It maintains a chronological record of changes, allowing users to review and understand the evolution of
+              a project over time.
+              This history can be valuable for debugging, auditing, or tracking the introduction of new features.
+            </p>
+          </li>
+          <li>
+            Collaboration:
+            <p>Version control systems enable multiple developers to work on the same project simultaneously. They
+              provide mechanisms for merging changes made by different team members, resolving conflicts, and ensuring
+              the stability and consistency of the project.
+            </p>
+          </li>
+
+          <li>Branching and Parallel Development:<p> Version control allows for the creation of branches, which are
+              independent lines of development. Branches enable developers to work on new features or bug fixes
+              separately without affecting the main codebase. Once the changes are tested and reviewed, they can be
+              merged back into the main branch.
+            </p>
+          </li>
+
+          <li>Rollback and Revert:<p> If errors or issues are introduced into a project, version control allows for
+              easy rollback to a previous known working state. It provides the ability to revert changes selectively or
+              completely, undoing modifications that may have caused problems.
+            </p>
+          </li>
+          <li>Collaboration and Code Review:<p>Version control systems often provide features for code review,
+              allowing team members to provide feedback, comment on changes, and ensure code quality before merging
+              changes into the main branch.
+            </p>
+          </li>
+        </ol>
+
+
+
+        <div style="text-align: center;">
+          <img style="margin: auto; width: 90%;" src="/version_c.png" alt="VCSP Logo">
+        </div>
+
+        <br>
+
+        <p>
+          Commonly used version control systems include Git, Mercurial, and Subversion. These systems offer a range of
+          functionalities and workflows to support different project requirements and team sizes.
+
+          Overall, version control plays a crucial role in modern software development by providing a structured and
+          efficient way to manage code changes, collaborate effectively, and maintain project integrity over time.
+        </p>
+        </p>
+        <div>
+
+        </div>
+
+        <h3>Git and GitHub</h3>
+        <div>
+          <p><strong>Git</strong> is a distributed version control system (VCS) widely used in software development. It
+            allows developers to track changes, collaborate with others, and manage source code efficiently. Git is
+            designed to be fast, scalable, and flexible, making it a popular choice for both small and large projects.
+          </p>
+          <div style="text-align: center;">
+            <img style="margin: auto; width: 90%;" src="/diffgitgithub.png" alt="git-and-github-workflow.png">
+          </div>
+          <p>Here are some key concepts and features of Git:</p>
+
+          <ol>
+            <li><strong>Repository:</strong> A Git repository is a central storage location for your project's source
+              code
+              and related files. It contains the complete history of changes made to the project.</li>
+            <li><strong>Commits:</strong> A commit in Git represents a snapshot of the project at a specific point in
+              time. It captures the changes made to files and includes a commit message that describes the
+              modifications.
+            </li>
+            <li><strong>Branching:</strong> Git provides a powerful branching model, allowing you to create separate
+              lines
+              of development. Each branch can be used for a specific feature, bug fix, or experiment. Branches make it
+              easy to work on different tasks simultaneously and isolate changes from the main codebase.</li>
+            <li><strong>Merging:</strong> Git enables you to merge changes from one branch to another, combining
+              different
+              lines of development. Merging integrates the changes made in one branch into another, allowing for
+              collaboration and the incorporation of new features or bug fixes.</li>
+            <li><strong>Remote Repositories:</strong> Git supports remote repositories, which enable collaboration and
+              code sharing across different locations. Developers can push their local changes to a remote repository
+              and
+              pull changes made by others.</li>
+          </ol>
+
+          <p><strong>GitHub</strong>, on the other hand, is a web-based hosting service for Git repositories. It
+            provides
+            additional features and functionalities built around Git, including:</p>
+
+          <ol>
+            <li><strong>Repository Hosting:</strong> GitHub allows you to create remote repositories for your projects
+              and
+              provides a web interface to manage and access them. It offers features like repository cloning, browsing,
+              and code review.</li>
+            <li><strong>Collaboration:</strong> GitHub facilitates collaboration by enabling multiple developers to work
+              on the same project simultaneously. It provides tools for managing issues, pull requests, and code
+              reviews.
+            </li>
+          </ol>
+          <div style="text-align: center;">
+            <img style="margin: auto; width: 90%;" src="/git-and-github-workflow.png" alt="git-and-github-workflow.png">
+          </div>
+          <p><strong>Git</strong> is a version control system that manages and keeps track of your code.
+            <strong>GitHub</strong> is a service that lets you host, share, and manage your code files on the internet.
+            GitHub uses Git underneath, and lets you manage your Git repositories or folders easily on its platform.
+          </p>
+
+          <p>Git allows multiple developers to work together on the same project with ease. You can use Git without
+            GitHub, but you can't use GitHub without Git.</p>
+
+          <p>Some of the uses of Git and GitHub include:</p>
+
+          <ol>
+            <li>Contributing to open source projects</li>
+            <li>Documentation</li>
+            <li>Integration options</li>
+            <li>Tracking changes in your code across versions</li>
+            <li>Showcasing your work</li>
+          </ol>
+
+          <p>Using Git and GitHub serves as a backup. Because GitHub has a copy of all of the code you have locally, if
+            anything were to happen to your computer, you’d still have access to your code. Using Git and GitHub allows
+            you to use version control.</p>
+
+
+          <hr>
+
+        </div>
+        <h3>Git Essentials</h3>
+
+        <p>Git is a version control system that allows you to track changes in your code over time. It uses commands in
+          the terminal to perform different operations. You can download Git from its official website.</p>
+        <p>To install Git, follow the instructions in this video. The link to the Git executable file is: <a
+            href="https://git-scm.com/downloads">git-scm.com</a> </p>
+        <div style="text-align: center; margin: auto; width: 90%;">
+          <iframe width="660" height="415" src="https://www.youtube.com/embed/4xqVv2lTo40" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h4>Commonly Used Git Commands</h4>
+
+        <ol>
+          <li>
+            <p>Initializes a new Git repository: </p>
+
+            <code>$ git init</code>
+
+          </li>
+
+          <li>
+            <p>Clones a remote repository into a new local directory:</p><code>$ git clone &lt;URL&gt;</code>
+          </li>
+
+          <li>
+            <p>Adds a file to the index for preparation for commit:</p><code>$ git add &lt;file&gt;</code>
+          </li>
+
+          <li>
+            <p>Commits the changes added to the index with a descriptive message:</p>
+            <code>$ git commit -m "message"</code>
+          </li>
+
+          <li>
+            <P>Sends local commits to a remote repository:<< /P><code>$ git push</code>
+          </li>
+
+          <li>
+            <P>Retrieves the latest changes from a remote repository and merges them with the
+              local branch.</P><code>$ git pull</code>
+          </li>
+
+          <li>
+            <P>Displays the list of available branches and highlights the current branch.</P><code>$ git branch</code>
+          </li>
+
+          <li>
+            <p>Switches to another specified branch.</p><code>$ git checkout &lt;branch&gt;</code>
+          </li>
+
+          <li>
+            <p>Merges a specified branch with the current branch.</p><code>$ git merge &lt;branch&gt;</code>
+          </li>
+
+          <li>
+            <p>Displays the history of commits made in the repository.</p><code>$ git log</code>
+          </li>
+
+          <li>
+            <p>
+              This command allows you to set aside uncommitted local changes in a temporary
+              stack, so that you can work on another branch or perform other operations without compromising your
+              ongoing
+              work.
+            </p><code>$ git stash</code>
+          </li>
+
+          <li>
+            <p>
+              Used to selectively apply a single commit from one branch to another. This
+              allows you to copy a specific commit from one branch to another, without having to merge the entire
+              branch.
+            </p><code>$ git cherry-pick</code>
+          </li>
+
+          <li>
+            <p>
+              Displays a detailed journal of all actions performed in your local repository,
+              including commits, branch changes, resets, etc. This can be useful if you have accidentally lost commits
+              or
+              branches and want to recover them.
+            </p>
+            <code>$ git reflog</code>
+          </li>
+
+
+          <li>
+            <p>
+              Displays a detailed journal of all actions performed in your local repository, including commits, branch
+              changes, resets, etc. This can be useful if you have accidentally lost commits or branches and want to
+              recover them.
+            </p>
+            <code>$ git reflog</code>
+          </li>
+          <li>
+            <p>
+              This command displays the current state of your working directory and staging area. It shows which files
+              have been modified, added, or deleted.
+            </p><code>git status:</code>
+          </li>
+          <li>
+            <p>
+              This command shows the differences between the working directory and the staging area. It helps you review
+              changes before staging them.
+            </p> <code>git diff:</code>
+          </li>
+          <li>
+            <p>
+              This command associates a remote repository with your local repository. The &lt;name&gt; is a short name
+              for the remote repository, and &lt;URL&gt; is the location of the remote repository.
+            </p><code>git remote add &lt;name&gt; &lt;URL&gt;:</code>
+          </li>
+          <li>
+            <p>
+              This command lists all the remote repositories associated with your local repository, along with their
+              URLs.
+            </p> <code>git remote -v:</code>
+          </li>
+          <li>
+            <p>
+              This command retrieves the latest changes from the remote repository without merging them into your local
+              branch. It updates your remote-tracking branches.
+            </p> <code>git fetch:</code>
+          </li>
+          <li>
+            <p>
+              This command lists all the local and remote branches in your repository.
+            </p> <code>git branch -a:</code>
+          </li>
+          <li>
+            <p>
+              This command deletes the specified branch. The branch must be fully merged into the current branch for it
+              to be deleted.
+            </p> <code>git branch -d &lt;branch&gt;:</code>
+          </li>
+          <li>
+            <p>
+              This command deletes the specified branch from the remote repository.
+            </p> <code>git push origin --delete &lt;branch&gt;:</code>
+          </li>
+          <li>
+            <p>
+              This command undoes the commits after &lt;commit&gt;, discarding the changes in the working directory. The
+              commits are still available in the reflog.
+            </p> <code>git reset &lt;commit&gt;:</code>
+          </li>
+          <li>
+            <p>
+              This command creates a new commit that undoes the changes introduced by the specified commit. It's a safe
+              way to undo commits while preserving history.
+            </p> <code>git revert &lt;commit&gt;:</code>
+          </li>
+          <li>
+            <p>
+              This command creates a lightweight tag at the current commit. Tags are often used to mark important points
+              in history, such as releases or milestones.
+            </p> <code>git tag &lt;tagname&gt;:</code>
+          </li>
+          <li>
+            <p>
+              This command creates an annotated tag at the current commit. Annotated tags store additional information
+              such as the tagger, date, and message.
+            </p><code>git tag -a &lt;tagname&gt; -m "message":</code>
+          </li>
+
+
+
+          <li>
+            <p>
+              This command is used to perform a binary search in the commit history to find
+              the commit that introduced a specific bug. It guides you automatically by asking you whether each commit
+              is
+              good or bad until it finds the problematic commit.
+            </p><code>$ git bisect</code>
+          </li>
+
+          </li>
+
+        </ol>
+        <BR>
+        <BR>
+        <DIV>
+          <H3>GitHub Essentials</H3>
+        </DIV>
+        <p>GitHub is a web-based platform that uses Git for version control and collaboration. It allows developers to
+          store and manage their code repositories in the cloud. GitHub provides a user-friendly interface that makes it
+          easy for individuals and teams to use Git for version control and collaboration. It also provides access
+          control, bug tracking, software feature requests, task management, continuous integration and deployment, and
+          other features that help developers work together more efficiently</p>
+        <p>
+          GitHub Enterprise is a self-hosted version of GitHub, which is a web-based platform for version control and
+          collaboration. GitHub Enterprise is designed for organizations that prefer to have their own dedicated
+          instance of GitHub installed and managed on their own infrastructure, rather than using the public GitHub
+          service.
+
+          GitHub Enterprise offers many of the same features as the public GitHub, including repository hosting, issue
+          tracking, pull requests, code reviews, and collaboration tools. It provides a centralized platform for teams
+          to manage and collaborate on software development projects, allowing multiple developers to work on the same
+          codebase simultaneously.
+
+          Some key features and benefits of GitHub Enterprise include:
+        <ol>
+          <li><strong>Self-hosted: </strong>
+            <p>Organizations have full control over the infrastructure and data associated with their GitHub instance.
+              It can be installed on-premises or on a private cloud environment.
+            </p>
+          </li>
+          <li>Security and compliance:</strong>
+            <p>GitHub Enterprise offers enhanced security features, such as enterprise authentication options, granular
+              access controls, and audit logs. It allows organizations to meet their specific security and compliance
+              requirements.
+            </p>
+          </li>
+          <li><strong>Scalability:</strong>
+            <p>GitHub Enterprise is designed to support large-scale enterprise environments with high-performance
+              requirements. It can handle a large number of repositories, users, and concurrent operations.
+            </p>
+          </li>
+          <li><strong>Integration and extensibility:</strong>
+            <p>It integrates with a wide range of development tools and services, allowing seamless workflows and
+              automated processes. It supports integrations with issue trackers, CI/CD pipelines, project management
+              tools, and more.
+            </p>
+          </li>
+          <li><strong>Support and services:</strong>
+            <p>GitHub Enterprise comes with enterprise-level support and services, including technical support,
+              training, and consulting, to assist organizations in deploying and managing their GitHub instance
+              effectively.
+            </p>
+          </li>
+        </ol>
+
+        <p>Overall, GitHub Enterprise offers organizations a private and customizable version control and collaboration
+          platform, tailored to their specific needs and requirements. It provides the benefits of the popular GitHub
+          platform while allowing organizations to maintain control over their codebase and infrastructure.
+        </p>
+        </p>
+        <h3>
+          Aditional informations
+        </h3>
+        <h4>Developers:</h4>
+        <ul>
+          <li>Organisation: Stellantis N.V, ATC, MTC.</li>
+          <li>Main Developer: AHABR ABDELLAH - SD94277.</li>
+          <li>Contributors:
+            <ul>
+              <li>SOUFIANE ECHKEM - U679057.</li>
+              <li>NOUR MEYAZI - U679860.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Contact Information:</h4>
+        <ul>
+          <li><a href="mailto:nour.meyazi@stellantis.com">nour.meyazi@stellantis.com</a></li>
+          <li><a href="mailto:abdellah.ahbar@external.stellantis.com">abdellah.ahbar@external.stellantis.com</a></li>
+        </ul>
+
+        <h4>Release Date:</h4>
+        <p>Monday, July 10th, 2023.</p>
+        <br>
+
+        <h2 id="section2">Section 2: Installation Guide</h2>
+        <hr>
+
+        <ol>
+          <li>
+            <strong>Download the application :</strong>
+            <ul>
+              <li>
+                <p>
+                  To get installer from GitHub Enterprise Stellantis : <a
+                    href=" https://github.psa-cloud.com/bs108/Version-Control-Stellantis-Project/releases/tag/V1.0.0">Realese
+                    v1.0.0</a> <br>
+              </li>
+              <li> Or this is a direct link : <a
+                  href="https://github.psa-cloud.com/bs108/Version-Control-Stellantis-Project/releases/download/V1.0.0/vcsp_setup.exe">
+                  VCSP_v1.0.0.exe</a>
+                </p>
+              </li>
+
+            </ul>
+          </li>
+          <li>
+            <strong>Install the requirements :</strong>
+            <p>
+              Instalation gide for Git :
+            </p>
+          </li>
+        </ol>
+        <h3 id="ftoc-heading-2" class="wp-block-heading ftwp-heading">Download Git for Windows</h3>
+        <p>
+          1. Browse to the official Git website: <a href="https://git-scm.com/downloads" target="_blank"
+            rel="noreferrer noopener">https://git-scm.com/downloads</a>
+          <br>2. Click the download link for Windows and allow the download to complete.
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="487" src="/download-git-for-windows.png"
+              alt="Windows version on Git page to download" class="wp-image-87825"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/download-git-for-windows.png" />
+            <noscript>
+              <img width="800" height="487" src="/download-git-for-windows.png"
+                alt="Windows version on Git page to download" class="wp-image-87825" />
+            </noscript>
+          </figure>
+        </div>
+        <h3 id="ftoc-heading-3" class="wp-block-heading ftwp-heading">Extract and Launch Git Installer</h3>
+        <p>3. Browse to the download location (or use the download shortcut in your browser). Double-click the file to
+          extract and launch the installer.</p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="231" src="/location-git-windows-download.png"
+              alt=" example Location where the Git file has been downloaded" class="wp-image-87826"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/location-git-windows-download.png" />
+            <noscript>
+              <img width="800" height="231"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/location-git-windows-download.png"
+                alt=" example Location where the Git file has been downloaded" class="wp-image-87826" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          4. Allow the app to make changes to your device by clicking <strong>Yes</strong>
+          on the User Account Control dialog that opens.
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="396" src="/start-git-installation-process-windows.png"
+              alt="Initiate the Git installation process by selecting Yes" class="wp-image-87827"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/start-git-installation-process-windows.png" />
+            <noscript>
+              <img width="800" height="396"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/start-git-installation-process-windows.png"
+                alt="Initiate the Git installation process by selecting Yes" class="wp-image-87827" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          5. Review the <a href="https://phoenixnap.com/glossary/gnu-general-public-license" target="_blank"
+            rel="noreferrer noopener">GNU General Public License</a>
+          , and when you’re ready to install, click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="410" src="/read-and-accept-git-license-agreement.png" alt="Accept Git Terms of Use"
+              class="wp-image-87828"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/read-and-accept-git-license-agreement.png" />
+            <noscript>
+              <img width="800" height="410"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/read-and-accept-git-license-agreement.png"
+                alt="Accept Git Terms of Use" class="wp-image-87828" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          6. The installer will ask you for an installation location. Leave the default, unless you have reason to
+          change it, and click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="431" src="/select-git-installation-location.png"
+              alt="Select the location for the Git installation on windows" class="wp-image-87829"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/select-git-installation-location.png" />
+            <noscript>
+              <img width="800" height="431"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/select-git-installation-location.png"
+                alt="Select the location for the Git installation on windows" class="wp-image-87829" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          7. A component selection screen will appear. Leave the defaults unless you have a specific need to change them
+          and click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="441" src="/git-installation-component-selection-screen.png"
+              alt="This screen allows you to select custom Git componenets to install." class="wp-image-87830"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/git-installation-component-selection-screen.png" />
+            <noscript>
+              <img width="800" height="441"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/git-installation-component-selection-screen.png"
+                alt="This screen allows you to select custom Git componenets to install." class="wp-image-87830" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          8. The installer will offer to create a start menu folder. Simply click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="405" src="/select-git-start-folder-shortcuts.png"
+              alt="Create shortcuts in Windows Start Menu" class="wp-image-87831"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/select-git-start-folder-shortcuts.png" />
+            <noscript>
+              <img width="800" height="405"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/select-git-start-folder-shortcuts.png"
+                alt="Create shortcuts in Windows Start Menu" class="wp-image-87831" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          9. Select a text editor you’d like to use with Git. Use the drop-down menu to select Notepad++ (or whichever
+          text editor you prefer) and click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="419" src="/select-text-editor-notepad-windows.png"
+              alt="choosing a text editor durring Git installation" class="wp-image-87832"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/select-text-editor-notepad-windows.png" />
+            <noscript>
+              <img width="800" height="419"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/select-text-editor-notepad-windows.png"
+                alt="choosing a text editor durring Git installation" class="wp-image-87832" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          10. The next step allows you to choose a different name for your initial branch. The default is 'master.'
+          Unless you're working in a team that requires a different name, leave the default option and click
+          <strong>Next.</strong>
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter size-full">
+            <img width="800" height="423" src="/choose-the-initial-branch-name-in-git.jpg"
+              alt="Choose a name for your initial git branch." class="wp-image-137506"
+              data-lazy-srcset="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-the-initial-branch-name-in-git.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-the-initial-branch-name-in-git-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-the-initial-branch-name-in-git-768x406.jpg 768w"
+              data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-the-initial-branch-name-in-git.jpg" />
+            <noscript>
+              <img width="800" height="423"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-the-initial-branch-name-in-git.jpg"
+                alt="Choose a name for your initial git branch." class="wp-image-137506"
+                srcset="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-the-initial-branch-name-in-git.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-the-initial-branch-name-in-git-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-the-initial-branch-name-in-git-768x406.jpg 768w"
+                sizes="(max-width: 800px) 100vw, 800px" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          11. This installation step allows you to change the <strong>PATH environment</strong>
+          . The <strong>PATH </strong>
+          is the default set of directories included when you run a command from the command line. Leave this on the
+          middle (recommended) selection and click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="418" src="/adjust-git-path-enviorment.png" alt="Adjust Git path enviorment"
+              class="wp-image-87834"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/adjust-git-path-enviorment.png" />
+            <noscript>
+              <img width="800" height="418"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/adjust-git-path-enviorment.png"
+                alt="Adjust Git path enviorment" class="wp-image-87834" />
+            </noscript>
+          </figure>
+        </div>
+        <h3 id="ftoc-heading-4" class="wp-block-heading ftwp-heading">Server Certificates, Line Endings and Terminal
+          Emulators</h3>
+        <p>
+          12. The installer now asks which SSH client you want Git to use. Git already comes with its own SSH client, so
+          if you don't need a specific one, leave the default option and click <strong>Next.</strong>
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter size-full">
+            <img width="800" height="423" src="/choose-a-git-ssh-client.jpg"
+              alt="Choose which SSH client to use in git." class="wp-image-137507"
+              data-lazy-srcset="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-git-ssh-client.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-git-ssh-client-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-git-ssh-client-768x406.jpg 768w"
+              data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-git-ssh-client.jpg" />
+            <noscript>
+              <img width="800" height="423"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-git-ssh-client.jpg"
+                alt="Choose which SSH client to use in git." class="wp-image-137507"
+                srcset="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-git-ssh-client.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-git-ssh-client-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-git-ssh-client-768x406.jpg 768w"
+                sizes="(max-width: 800px) 100vw, 800px" />
+            </noscript>
+          </figure>
+        </div>
+        <div class="notice-note">
+          <div class="note-icon-wrapper">
+            <i class="fa fa-lightbulb"></i>
+          </div>
+          <div class="notice-text">
+            <p>
+              <strong>Note:</strong>
+              Check out our comparison of <a href="https://phoenixnap.com/kb/git-ssh-vs-https" target="_blank">SSH and
+                HTTPS for Git</a>
+              and which one you should use.
+            </p>
+          </div>
+        </div>
+        <p>
+          13. The next option relates to server certificates. Most users should use the default. If you’re working in an
+          Active Directory environment, you may need to switch to Windows Store certificates. Click
+          <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="423" src="/use-openssl-library-server-verification-git-windows.png"
+              alt="server sertificate for Git to use selcted" class="wp-image-87836"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/use-openssl-library-server-verification-git-windows.png" />
+            <noscript>
+              <img width="800" height="423"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/use-openssl-library-server-verification-git-windows.png"
+                alt="server sertificate for Git to use selcted" class="wp-image-87836" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          14. The next selection converts line endings. It is recommended that you leave the default selection. This
+          relates to the way data is formatted and changing this option may cause problems. Click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="433" src="/configure-line-ending-conversions-git-on-windows.png"
+              alt="Select line end conversions" class="wp-image-87837"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/configure-line-ending-conversions-git-on-windows.png" />
+            <noscript>
+              <img width="800" height="433"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/configure-line-ending-conversions-git-on-windows.png"
+                alt="Select line end conversions" class="wp-image-87837" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          15. Choose the <a href="https://phoenixnap.com/glossary/terminal-emulation" target="_blank"
+            rel="noreferrer noopener">terminal emulator</a>
+          you want to use. The default MinTTY is recommended, for its features. Click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="434" src="/configure-terminal-emulator-git-bash.png"
+              alt="Select MinTTY as default terminal emulator" class="wp-image-87838"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/configure-terminal-emulator-git-bash.png" />
+            <noscript>
+              <img width="800" height="434"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/configure-terminal-emulator-git-bash.png"
+                alt="Select MinTTY as default terminal emulator" class="wp-image-87838" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          16. The installer now asks what the
+          <strong>
+            <code>git pull</code>
+          </strong>
+          command should do. The default option is recommended unless you specifically need to change its behavior.
+          Click <strong>Next </strong>
+          to continue with the installation.
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter size-full">
+            <img width="800" height="423" src="/choose-pull-behavior-in-git.jpg"
+              alt="Choose what the git pull command does in git." class="wp-image-137508"
+              data-lazy-srcset="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-pull-behavior-in-git.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-pull-behavior-in-git-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-pull-behavior-in-git-768x406.jpg 768w"
+              data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-pull-behavior-in-git.jpg" />
+            <noscript>
+              <img width="800" height="423"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-pull-behavior-in-git.jpg"
+                alt="Choose what the git pull command does in git." class="wp-image-137508"
+                srcset="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-pull-behavior-in-git.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-pull-behavior-in-git-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-pull-behavior-in-git-768x406.jpg 768w"
+                sizes="(max-width: 800px) 100vw, 800px" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          17. Next you should choose which credential helper to use. Git uses credential helpers to fetch or save
+          credentials. Leave the default option as it is the most stable one, and click <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter size-full">
+            <img width="800" height="423" src="/choose-a-credential-manager-for-git.jpg"
+              alt="Choose a git credential helper." class="wp-image-137509"
+              data-lazy-srcset="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-credential-manager-for-git.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-credential-manager-for-git-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-credential-manager-for-git-768x406.jpg 768w"
+              data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-credential-manager-for-git.jpg" />
+            <noscript>
+              <img width="800" height="423"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-credential-manager-for-git.jpg"
+                alt="Choose a git credential helper." class="wp-image-137509"
+                srcset="https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-credential-manager-for-git.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-credential-manager-for-git-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2020/01/choose-a-credential-manager-for-git-768x406.jpg 768w"
+                sizes="(max-width: 800px) 100vw, 800px" />
+            </noscript>
+          </figure>
+        </div>
+        <h3 id="ftoc-heading-5" class="wp-block-heading ftwp-heading">Additional Customization Options</h3>
+        <p>
+          18. The default options are recommended, however this step allows you to decide which extra option you would
+          like to enable. If you use symbolic links, which are like shortcuts for the command line, tick the box. Click
+          <strong>Next</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter size-full">
+            <img width="800" height="423" src="/configure-extra-options-in-git.jpg"
+              alt="Choose extra options during git installation." class="wp-image-137510"
+              data-lazy-srcset="https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-extra-options-in-git.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-extra-options-in-git-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-extra-options-in-git-768x406.jpg 768w"
+              data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-extra-options-in-git.jpg" />
+            <noscript>
+              <img width="800" height="423"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-extra-options-in-git.jpg"
+                alt="Choose extra options during git installation." class="wp-image-137510"
+                srcset="https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-extra-options-in-git.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-extra-options-in-git-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-extra-options-in-git-768x406.jpg 768w"
+                sizes="(max-width: 800px) 100vw, 800px" />
+            </noscript>
+          </figure>
+        </div>
+        <p>
+          19. Depending on the version of Git you’re installing, it may offer to install experimental features. At the
+          time this article was written, the options to include support for pseudo controls and a built-in file system
+          monitor were offered. Unless you are feeling adventurous, leave them unchecked and click
+          <strong>Install</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter size-full">
+            <img width="800" height="423" src="/configure-git-experimental-options.jpg"
+              alt="Configure experimental git features." class="wp-image-137511"
+              data-lazy-srcset="https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-git-experimental-options.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-git-experimental-options-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-git-experimental-options-768x406.jpg 768w"
+              data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-git-experimental-options.jpg" />
+            <noscript>
+              <img width="800" height="423"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-git-experimental-options.jpg"
+                alt="Configure experimental git features." class="wp-image-137511"
+                srcset="https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-git-experimental-options.jpg 800w, https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-git-experimental-options-300x159.jpg 300w, https://phoenixnap.com/kb/wp-content/uploads/2021/09/configure-git-experimental-options-768x406.jpg 768w"
+                sizes="(max-width: 800px) 100vw, 800px" />
+            </noscript>
+          </figure>
+        </div>
+        <h3 id="ftoc-heading-6" class="wp-block-heading ftwp-heading">Complete Git Installation Process</h3>
+        <p>
+          20. Once the installation is complete, tick the boxes to view the Release Notes or Launch Git Bash, then click
+          <strong>Finish</strong>
+          .
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="435" src="/complete-git-install-windows.png"
+              alt="Git installation on Windows is done" class="wp-image-87842"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/complete-git-install-windows.png" />
+            <noscript>
+              <img width="800" height="435"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/complete-git-install-windows.png"
+                alt="Git installation on Windows is done" class="wp-image-87842" />
+            </noscript>
+          </figure>
+        </div>
+        <div class="notice-note">
+          <div class="note-icon-wrapper">
+            <i class="fa fa-lightbulb"></i>
+          </div>
+          <div class="notice-text">
+            <p>
+              <strong>Note:</strong>
+              Learn the differences between <a href="https://phoenixnap.com/kb/cli-vs-gui" target="_blank">CLI and
+                GUI</a>
+              .
+            </p>
+          </div>
+        </div>
+        <h3 id="ftoc-heading-7" class="wp-block-heading ftwp-heading">How to Launch Git in Windows</h3>
+        <p>
+          Git has two modes of use – a <strong>bash scripting shell</strong>
+          (or command line) and a <strong>graphical user interface</strong>
+          (GUI).
+        </p>
+        <h4 id="ftoc-heading-8" class="wp-block-heading ftwp-heading">Launch Git Bash Shell</h4>
+        <p>
+          To launch <strong>Git Bash</strong>
+          open the <strong>Windows Start</strong>
+          menu, type
+          <strong>
+            <em>git bash</em>
+          </strong>
+          and press <strong>Enter</strong>
+          (or click the application icon).
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="798" height="642" src="/start-git-bash-windows.png" alt="how to start Git bash from Windows"
+              class="wp-image-87845"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/start-git-bash-windows.png" />
+            <noscript>
+              <img width="798" height="642"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/start-git-bash-windows.png"
+                alt="how to start Git bash from Windows" class="wp-image-87845" />
+            </noscript>
+          </figure>
+        </div>
+        <h4 id="ftoc-heading-9" class="wp-block-heading ftwp-heading">Launch Git GUI</h4>
+        <p>
+          To launch <strong>Git GUI</strong>
+          open the <strong>Windows Start</strong>
+          menu, type
+          <em>
+            <strong>git gui</strong>
+          </em>
+          and press <strong>Enter</strong>
+          (or click the application icon).
+        </p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="344" src="/start-gui-git-windows.png" alt="initial Git GUI screen"
+              class="wp-image-87849"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/start-gui-git-windows.png" />
+            <noscript>
+              <img width="800" height="344"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/start-gui-git-windows.png"
+                alt="initial Git GUI screen" class="wp-image-87849" />
+            </noscript>
+          </figure>
+        </div>
+        <h3 id="ftoc-heading-10" class="wp-block-heading ftwp-heading">Connecting to a Remote Repository</h3>
+        <p>You need a GitHub username and password for this next step.</p>
+        <h4 id="ftoc-heading-11" class="wp-block-heading ftwp-heading">Create a Test Directory</h4>
+        <p>
+          Open a Windows PowerShell interface by pressing <strong>Windows Key + x</strong>
+          , and then <strong>i</strong>
+          once the menu appears.
+        </p>
+        <p>Create a new test directory (folder) by entering the following:</p>
+        <pre class="wp-block-code">
+            <code>mkdir git_test</code>
+        </pre>
+        <p>An example of the PowerShell output.</p>
+        <div class="wp-block-image">
+          <figure class="aligncenter">
+            <img width="800" height="280" src="/create-test-directory-git.png"
+              alt="Example of creating a test directory in Windows PowerShell." class="wp-image-87860"
+              data-lazy-src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/create-test-directory-git.png" />
+            <noscript>
+              <img width="800" height="280"
+                src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/create-test-directory-git.png"
+                alt="Example of creating a test directory in Windows PowerShell." class="wp-image-87860" />
+            </noscript>
+          </figure>
+        </div>
+        <p>Change your location to the newly created directory:</p>
+        <pre class="wp-block-code">
+            <code>cd git_test</code>
+        </pre>
+
+        <h3 id="ftoc-heading-12" class="wp-block-heading ftwp-heading">Configure GitHub Credentials</h3>
+        <p>Configure your local Git installation to use your GitHub credentials by entering the following:</p>
+        <pre class="wp-block-code">
+            <code>git config --global user.name &quot;github_username &quot;</code>
+        </pre>
+        <pre class="wp-block-code">
+            <code>git config --global user.email &quot;email_address &quot;</code>
+        </pre>
+        <div class="notice-note">
+          <div class="note-icon-wrapper">
+            <i class="fa fa-lightbulb"></i>
+          </div>
+          <div class="notice-text">
+            <p>
+              <strong>Note:</strong>
+              Replace <strong>github_username</strong>
+              and <strong>email_address</strong>
+              with your GitHub credentials.
+            </p>
+          </div>
+        </div>
+
+        </ol>
+        </li>
+
+        <h3>
+          Installation process for the VCSP application
+        </h3>
+        <ol>
+          <li>
+            <p>
+              After downloading the application, go to the chosen folder:
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 50%;" src="/downloadvcsp.PNG" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <p>
+              Click on the app and then click on 'Additional Information':
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 50%;" src="/instalation process (2).png" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <p>
+              Click on “Exécuter quand même:” :
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 50%;" src="/instalation process (1).png" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <p>
+              Select a language for the installation process:
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 50%;" src="/inst1.PNG" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <p>
+              Read the instructions:
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/inst2.PNG" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <p>
+              Click ‘Next’ in all following windows:
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/inst3.PNG" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <p>‘Next’ :
+
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/inst4.PNG" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <p>
+              Wait until the installation has been completed:
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/inst51.PNG" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <p>
+              Click ‘Finish’:
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/inst6.PNG" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+        </ol>
+        <br>
+        <h4 style="text-align: center;">Congratulation , & Great job. You have completed the installation process !</h4>
+
+        <div style="text-align: center;">
+          <img style="margin: auto; width: 50%;" src="/work donegif.gif" alt="VCSP Logo">
+        </div>
+
+        <h2 id="section2">
+          Section 3: Features and option - User Guide</h2>
+        <hr>
+        <p>
+          To use Vcsp, go to the start menu and chose it :
+        <div style="text-align: center;">
+          <img style="margin: auto; width: 100%;" src="/topvcsp.PNG" alt="VCSP Logo">
+        </div>
+        </p>
+        <ol>
+          <li>
+            <h3>Login </h3>
+            <p>
+              the first screen that will appear to you is a login screen when you should enter your credentials :
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 30%;" src="/26d2c4a8-5543-494e-96aa-d776557ef3f1.png" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <h3>Home </h3>
+            <p>
+              the first screen that will appear to you is a login screen when you should enter your credentials :
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/78629ce1-698b-4e19-a35c-82d541a40bbd.png" alt="VCSP Logo">
+            </div>
+            </p>
+          </li>
+          <li>
+            <h3>Clone Project </h3>
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/CLONE.PNG" alt="VCSP Logo">
+            </div>
+          </li>
+          <li>
+            <h3>Build a Project </h3>
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/buildsoft.png" alt="VCSP Logo">
+            </div>
+          </li>
+          <li>
+            <h3>Commit Editor </h3>
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 60%;" src="/Commit.PNG" alt="VCSP Logo">
+            </div>
+          </li>
+          <li>
+            <h3>Commit Graph </h3>
+            - Full history
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 90%;" src="/5d2a8b59-1657-4615-a13a-eccaa30b7e9a.png" alt="VCSP Logo">
+            </div>
+            - Tag history
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 100%;" src="/taghis.png" alt="VCSP Logo">
+            </div>
+          </li>
+          <li>
+            <h3>Compare </h3> - compare versions <div style="text-align: center;">
+              <img style="margin: auto; width: 100%;" src="/compareversion.png" alt="VCSP Logo">
+            </div>
+          </li>
+          <li>
+            <h3>Find Use </h3>
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 70%;" src="/finduse.png" alt="VCSP Logo">
+            </div>
+          </li>
+          </li>
+          <li>
+            <h3>File options </h3>
+            <div style="text-align: center;">
+              <img style="margin: auto; width: 30%;" src="/FILE OPTIONS.PNG" alt="VCSP Logo">
+            </div>
+          </li>
+        </ol>
+
+        <h2 id="section3">Section 4: Troubleshooting</h2>
+        <hr>
+        <p>
+          Here are some general tips for troubleshooting software:
+        <ul>
+          <li>Free up RAM by closing other open programs.</li>
+          <li>Restart the software.</li>
+          <li>Shut down and restart your computer.</li>
+          <li>Use the internet to find help, solutions, and error messages.</li>
+          <li>Undo recent updates or changes to hardware or software.</li>
+          <li>Check for viruses or malware.</li>
+          <li>Check for compatibility issues with your operating system.</li>
+          <li>Check for compatibility issues with other software programs.</li>
+          <li>Check for compatibility issues with your hardware.</li>
+          <li>Reinstall the software.</li>
+        </ul>
+
+        These tips should help you troubleshoot most software problems you might encounter. If you have any
+        specific software in mind that you’re having trouble with, let me know and I can try to provide more specific
+        advice!
+        ...
+        </p>
+
+        <h2 id="section4">Section 5: Report Issues & Enhancements</h2>
+        <hr>
+        <div>
+          <p>
+            To repport any issues please add them in the issiues platform : <a
+              href="https://github.psa-cloud.com/bs108/VCSP/projects/1">VCSP Report Issues & Enhancements</a>
+          <div style="text-align: center;">
+            <img style="margin: auto; width: 100%;" src="/rI.PNG" alt="VCSP Logo">
+          </div>
+          </p>
+        </div>
+        <h2 id="section5">Section 6: Contribution</h2>
+        <hr>
+
+        <ul>
+          <li>Install git: <a href="https://git-scm.com/downloads">Git - Downloads Page</a>.</li>
+          <li>Install Python version: Python 3.11.2.</li>
+          <li>Make sure that you use pip version: pip 23.0.1.</li>
+          <li>Clone this repository by typing in your command prompt:
+            <code>git clone https://github.psa-cloud.com/bs108/VCSP</code>.
+            <ul>
+              <li>In case you can't clone this repository, ask for access.</li>
+            </ul>
+          </li>
+          <li>Go inside the folder VSCP.</li>
+          <li>Install requirements by running the command: <code>pip install requirement.txt</code>.</li>
+          <li>Go to the main.py and run it using one of the commands below or your text editors:
+            <ul>
+              <li><code>py main.py</code>.</li>
+              <li><code>python main.py</code>.</li>
+              <li><code>python3 main.py</code>.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>
+            <h2 style="color:red">Warning:</h2>
+          </strong><br>
+          Any manual changes made to this file will affect the normal behavior of the Software. Do not edit this file
+          unless you know what you are doing.</p>
+
+        <h2>AFTER ANY CONTRIBUTION</h2>
+
+        <ul>
+          <li>Make sure that there are no bugs in your contribution by asking multiple people to review your code.</li>
+          <li>Please update the list of requirements, so the next person will not have any problems while running the
+            main.py script. To do that, run the command <code>pipreqs</code>.</li>
+        </ul>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</body>
+
+</html>
